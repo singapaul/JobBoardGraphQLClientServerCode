@@ -9,6 +9,7 @@ export const connection = knex({
 });
 
 
+// this is just useful to help us debug the SQL queries
 connection.on('query', ({sql, bindings}) => {
   const query  = connection.raw(sql, bindings).toQuery()
   console.log(query)
